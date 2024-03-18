@@ -1,0 +1,9 @@
+{% extends "master.html" %} {% block title %} Details about {{ myincomes.kategori }} {{ myincomes.jumlah }} {% endblock %} {% block content %}
+<h1>{{ myincomes.ketegori }} {{ myincomes.jumlah }}</h1>
+
+<p>Keterangan {{ myincomes.keterangan }}</p>
+<p>Created : {{ myincomes.tanggal }}</p>
+
+<p>Back to <a href="/income">Income</a></p>
+
+{% endblock %}

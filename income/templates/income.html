@@ -1,16 +1,9 @@
-<!DOCTYPE html>
-<html>
+{% extends "master.html" %} {% block title %} Our Money Management {% endblock %} {% block content %}
+<h1>Income</h1>
 
-<body>
-
-    <h1>Income</h1>
-
-    <ul>
-        {% for x in myincome %}
-        <li>{{ x.kategori }} {{ x.jumlah }}</li>
-        {% endfor %}
-    </ul>
-
-</body>
-
-</html>
+<ul>
+    {% for x in myincome %}
+    <li><a href="details/{{ x.id }}">{{ x.kategori}} {{ x.income }}</a></li>
+    {% endfor %}
+</ul>
+{% endblock %}

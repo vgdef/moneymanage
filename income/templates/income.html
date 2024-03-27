@@ -1,9 +1,50 @@
 {% extends "master.html" %} {% block title %} Our Money Management {% endblock %} {% block content %}
 <h1>Income</h1>
 
-<ul>
+<form method="post" action="{% url 'income_entry' %}">
+    {% csrf_token %}
+    <label for="kategori">Kategori:</label>
+    <input type="text" name="kategori" required>
+    <label for="jumlah">Jumlah</label>
+    <input type="text" name="jumlah" required>
+    <br>
+    <label for="keterangan">Keterangan</label>
+    <input type="text" name="keterangan" required>
+
+    <button type="submit">Submit</button>
+</form>
+
+
+<style>
+    table,
+    th,
+    td {
+        border: 1px solid black;
+    }
+</style>
+
+<h3>List Income</h13>
+    <table style="width: 100%" ">
+    
+    <tr>
+        <th>Kategori</th>
+        <th>Jumlah</th>
+        <th>Keterangan</th>
+        <th>Action</th>
+    </tr>
     {% for x in myincome %}
-    <li><a href="details/{{ x.id }}">{{ x.kategori}} {{ x.income }}</a></li>
-    {% endfor %}
-</ul>
-{% endblock %}
+    <tr>
+        <td>
+            <a href="details/{{ x.id }} ">{{ x.kategori}} </a>
+        </td>
+        <td>
+            <a href="details/{{ x.id }} ">{{ x.jumlah }}</a>
+        </td>
+        <td>
+            <a href="details/{{ x.id }} ">{{ x.keterangan}}</a>
+        </td>
+        <td><a href="delete/{{x.id}} ">Hapus</a>
+            <a href="update/{{x.id}} ">Edit</a></td>
+    </tr>
+    {% endfor %} {% endblock %}
+</table>

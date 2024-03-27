@@ -1,0 +1,13 @@
+<h1>Update Income</h1>
+
+<form method="post" action="{% url 'update' %}">
+    {% csrf_token %} Kategori:
+    <br>
+    <input name="kategori" value="{{ myincome.kategori }}">
+    <br><br> Jumlah:<br>
+    <input name="jumlah" value="{{ myincome.jumlah }}">
+    <br><br> Keterangan:<br>
+    <input name="keterangan" value="{{ myincome.keterangan }}">
+    <br><br>
+    <input type="submit" value="Submit">
+</form>

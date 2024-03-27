@@ -10,5 +10,12 @@ class Income(models.Model):
 class Reference(models.Model):
     nama = models.CharField(max_length=255)
     jenis = models.CharField(max_length=50)
+    harga = models.CharField(max_length=255, default=0)
+    created = models.DateTimeField(auto_now_add=True)
+    status = models.IntegerField(default=1)
+
+class Need(models.Model):
+    nama = models.CharField(max_length=255)
+    quantity = models.CharField(max_length=50)
     created = models.DateTimeField(auto_now_add=True)
     status = models.IntegerField(default=1)

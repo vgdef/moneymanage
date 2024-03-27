@@ -1,7 +1,7 @@
 <h1>Update Income</h1>
 
-<form method="post" action="{% url 'update' %}">
-    {% csrf_token %} Kategori:
+<form action="update_record/{{ myincome.id }}" method="post">
+    {% csrf_token %}Kategori:
     <br>
     <input name="kategori" value="{{ myincome.kategori }}">
     <br><br> Jumlah:<br>
